@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+
+      <div class="col-6 col-sm-6">
+        <!-- elemento do ts filho(component progresso) dentro [] e elemento do ts pai(painel) dentro de " " -->
+        <!-- <div class="d-flex justify-content-start"> -->
+          <app-progresso [progresso]="progresso"></app-progresso>
+        <!-- </div> -->
+      </div>
+      <div class="col-6 col-sm-6">
+        <div class="d-flex justify-content-end">
+          <app-tentativas [tentativas]="tentativas"></app-tentativas>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h6>{{ instrucao }}</h6>
+        <p>{{ rodadaFrase.fraseEng }}</p>
+        <!-- utilizado somente para mostrar o input em realtime -->
+        <!-- <p>{{ resposta }}</p> -->
+
+        <div class="form-group">
+          <textarea class="form-control" rows="3" (input)="atualizaResposta($event)" [value]="resposta"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="d-flex justify-content-end">
+          <button mat-raised-button color="primary" type="button" class="btn btn-primary" (click)="verificarResposta()">Verificar</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
